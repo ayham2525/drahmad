@@ -150,13 +150,16 @@
         color: $primary-color;
         bottom: 3%;
         top: unset;
+        right: 0 !important;
+        left: 0 !important;
+        background-color: rgba(0,161,75,0.7);
       }
 
       h4 {
         font-size: 2rem;
         @include MaxQuery(768){
-          color: $primary-color !important; 
-          outline: white;
+          color: $white;
+         
           max-width: 75%;
           text-align: center;
         
