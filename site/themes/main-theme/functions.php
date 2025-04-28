@@ -258,6 +258,7 @@
                             <i class="fas fa-play"></i>
                           </div>
                         </div>
+                        <h5 class="video-title text-center mt-3"><?php echo get_the_title();?></h5>
                       </div>
                     </div>
                     <?php
@@ -301,6 +302,7 @@
                             <i class="fas fa-play"></i>
                           </div>
                         </div>
+                        <h5 class="video-title text-center mt-3"><?php echo get_the_title();?></h5>
                       </div>
                     </div>
                     <?php

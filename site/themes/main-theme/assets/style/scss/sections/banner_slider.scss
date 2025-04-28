@@ -146,9 +146,21 @@
       flex-direction: column;
       gap: 10px;
       max-width: 400px;
+      @include MaxQuery(768){
+        color: $primary-color;
+        bottom: 3%;
+        top: unset;
+      }
 
       h4 {
         font-size: 2rem;
+        @include MaxQuery(768){
+          color: $primary-color !important; 
+          outline: white;
+          max-width: 75%;
+          text-align: center;
+        
+        }
       }
 
       html[dir="rtl"] & {
