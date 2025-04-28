@@ -1,0 +1,56 @@
+@import "../mixins.scss";
+.title_with_text {
+    background: $background-light;
+    padding: 60px 0;
+  
+    .title {
+     
+      font-weight: bold;
+      margin-bottom: 20px;
+  
+      @include MinQuery(1200) {
+        font-size: 1.6rem;
+      }
+  
+      @include MinQuery(992) {
+        font-size: 1.4rem;
+      }
+    }
+
+    .section-accent-line{
+        width: 80px;
+        height: 5px;
+        background-color: $primary-color;
+ 
+        border-radius: 4px;
+    
+        @media (max-width: 768px) {
+          width: 60px;
+          height: 4px;
+        }
+    
+        @media (max-width: 480px) {
+          width: 50px;
+          height: 3px;
+        }
+      }
+      h1,h2{
+        font-size: 22px !important;
+      }
+  
+    .text-content {
+      font-size: 1.1rem;
+      line-height: 1.8;
+     
+      margin: 0 auto;
+  
+      @include MinQuery(1200) {
+        font-size: 1rem;
+      }
+  
+      @include MinQuery(992) {
+        font-size: 0.95rem;
+      }
+    }
+  }
+  

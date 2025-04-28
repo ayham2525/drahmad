@@ -1,0 +1,108 @@
+@import "../mixins.scss";
+
+.contact_us {
+  background-color: #f9f9f9;
+  padding: 60px 0;
+
+  .title {
+    font-size: 2.2rem;
+    
+    font-weight: bold;
+    text-align: center;
+
+    @include responsive(md) {
+      font-size: 1.8rem;
+    }
+
+    @include responsive(sm) {
+      font-size: 1.6rem;
+    }
+  }
+
+  .section-accent-line {
+    width: 80px;
+    height: 5px;
+    background-color: #00A14B;
+    margin: 10px auto 30px auto;
+    
+  }
+
+  .form-container {
+    width: 100% !important; 
+    padding: 30px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    direction: rtl;
+
+    .wpcf7-form {
+        width: 100% !important;
+      .wpcf7-form-control {
+        width: 100%;
+        padding: 10px 15px;
+        border: unset;
+        background-color: transparent;
+        border-radius: 0; /* No border radius */
+        margin-bottom: 20px;
+        font-size: 1rem;
+        transition: 0.3s ease;
+        border-bottom: 1px solid $primary-color;
+         
+
+        &:focus {
+            border-bottom: 1px solid $primary-color;
+            background-color: transparent;
+          box-shadow:unset;
+          outline: none;
+        }
+      }
+
+      textarea.wpcf7-textarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+      label{
+        width: 100%;
+      }
+
+      .wpcf7-submit {
+        background-color: $primary-color;
+        color: #fff;
+        border: none;
+        padding: 12px 25px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        border-radius: 30px; /* Only button has radius */
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center; /* Center text and icon horizontally */
+        gap: 8px;
+        width: 100%; /* Make button full width if you want */
+        transition: background-color 0.3s ease;
+
+        svg {
+          stroke: #fff;
+        }
+
+        &:hover {
+          background-color: darken(#00A14B, 10%);
+        }
+      }
+    }
+  }
+
+  img.img-fluid {
+    object-fit: cover;
+    max-height: 500px;
+    width: 100%;
+  }
+
+  @include responsive(md) {
+    .row {
+      flex-direction: column;
+    }
+
+    .img-fluid {
+      margin-bottom: 30px;
+    }
+  }
+}

@@ -1,0 +1,2 @@
+<?php
+return ['items'=>['Skip to main content'=>['urls'=>[],'names'=>[],'cmp'=>['wp_bootstrap_starter',2]],'Toggle navigation'=>['urls'=>[],'names'=>[],'cmp'=>['wp_bootstrap_starter',2]],'Add a menu'=>['urls'=>[],'names'=>[],'cmp'=>['wp_bootstrap_starter',2]],'Search'=>['urls'=>[],'names'=>[],'cmp'=>['wp_bootstrap_starter',2]],'&copy; %1$s %2$s. All rights reserved.'=>['urls'=>[],'names'=>[],'cmp'=>['wp_bootstrap_starter',2]]]];

@@ -1,0 +1,88 @@
+@import "../mixins.scss";
+
+$image-with-text-bg: $gray-light; 
+$image-with-text-text: $gray-dark; 
+$image-with-text-small-text: $gray-medium;
+$image-with-text-quote-icon: $primary-green; 
+
+.image_with_text {
+  width: 100%;
+  background-color: $image-with-text-bg;
+
+  .text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+
+    .text {
+      font-size: 22px;
+      color: $image-with-text-text;
+      position: relative;
+      text-align: justify;
+      margin-inline: 32px;
+
+      @include MaxQuery(768) {
+        margin-inline: unset;
+        margin-top: 64px;
+      }
+
+      .quote-icon {
+        position: absolute;
+        color: $image-with-text-quote-icon;
+        font-size: 35px;
+      }
+
+      // RTL (Arabic)
+      html[dir="rtl"] & {
+        direction: rtl;
+
+        .quote-icon.start {
+          margin-left: 10px;
+          right: 0;
+          top: -32px;
+
+          @include MaxQuery(768) {
+            top: -32px;
+          }
+        }
+
+        .quote-icon.end {
+          margin-right: 10px;
+          left: 0;
+          bottom: 32px;
+        }
+      }
+
+      // LTR (English)
+      html[dir="ltr"] & {
+        direction: ltr;
+
+        .quote-icon.start {
+          margin-right: 10px;
+          left: 0;
+          top: -32px;
+
+          @include MaxQuery(768) {
+            top: -32px;
+          }
+        }
+
+        .quote-icon.end {
+          margin-left: 10px;
+          right: 0;
+          bottom: 32px;
+        }
+      }
+    }
+
+    .small_text {
+      font-size: 20px;
+      font-style: italic;
+      font-family: $gulzar;
+      color: $image-with-text-small-text;
+      padding-top: 1rem;
+    }
+  }
+}

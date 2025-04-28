@@ -1,0 +1,2 @@
+<?php
+return ['items'=>['General Settings'=>['saveStringInDb'=>true,'cmp'=>['WordPress',3],'names'=>[],'urls'=>[]],'Default Post Status'=>['saveStringInDb'=>true,'cmp'=>['WordPress',3],'names'=>[],'urls'=>[]],'Title Prefix'=>['saveStringInDb'=>true,'cmp'=>['WordPress',3],'names'=>[],'urls'=>[]],'Title Suffix'=>['saveStringInDb'=>true,'cmp'=>['WordPress',3],'names'=>[],'urls'=>[]],'Slug Prefix'=>['saveStringInDb'=>true,'cmp'=>['WordPress',3],'names'=>[],'urls'=>[]],'Slug Suffix'=>['saveStringInDb'=>true,'cmp'=>['WordPress',3],'names'=>[],'urls'=>[]]]];

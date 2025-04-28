@@ -1,0 +1,2 @@
+<?php
+return ['items'=>['This field has a too long input.'=>['saveStringInDb'=>true,'cmp'=>['WordPress',3],'names'=>[],'urls'=>[]],'This field has a too early date.'=>['saveStringInDb'=>true,'cmp'=>['WordPress',3],'names'=>[],'urls'=>[]],'This field has a too late date.'=>['saveStringInDb'=>true,'cmp'=>['WordPress',3],'names'=>[],'urls'=>[]],'Sender does not enter the correct answer to the quiz'=>['saveStringInDb'=>true,'cmp'=>['WordPress',3],'names'=>[],'urls'=>[]]]];

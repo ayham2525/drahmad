@@ -1,0 +1,229 @@
+@import "../mixins.scss";
+
+// Base Colors
+$primary-green: #00A14B;
+$primary-color: #00A14B;
+$background-light: #f9f9f9;
+$white: #FFFFFF;
+$dark-text: #333333;
+$gray-medium: #666666;
+$shadow-color: rgba(0, 0, 0, 0.08);
+$shadow-hover-color: rgba(0, 0, 0, 0.15);
+$hover-darken: darken($primary-color, 10%);
+
+.show_videos {
+  position: relative; // مهم عشان صورة الخلفية تكون داخل القسم
+  background-color: $gray-medium;
+  padding: 3rem 0;
+  overflow: hidden; // حتى ما تطلع الصورة برا السكشن
+
+  // Background Image
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 400px; // حجم الصورة
+    height: 400px;
+    background: url('/images/bk1.jpeg') no-repeat left bottom;
+    background-size: cover;
+  opacity: 0.7;
+  filter: grayscale(100%);
+  z-index: 1;
+  }
+
+  // Content فوق الصورة
+  .section-header,
+  .video-card,
+  .home-btn-load-more {
+    position: relative;
+    z-index: 2;
+  }
+ 
+
+    .section-title {
+      font-size: 2rem;
+      color: $white;
+      font-weight: bold;
+      text-align: right;
+    }
+  
+    .section-accent-line {
+      width: 80px;
+      height: 5px;
+      background-color: $primary-color;
+      float: right;
+      border-radius: 4px;
+  
+      @media (max-width: 768px) {
+        width: 60px;
+        height: 4px;
+      }
+  
+      @media (max-width: 480px) {
+        width: 50px;
+        height: 3px;
+      }
+    }
+ 
+
+  .video-card {
+    background: $white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px $shadow-color;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid $border-light;
+
+    &:hover, &:focus, &:active {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 12px 25px $shadow-hover-color;
+      background: lighten($white, 2%);
+
+      .play-icon {
+        background: lighten($primary-color, 10%);
+        transform: scale(1.1);
+      }
+    }
+
+    .youtube-thumb {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 10px 10px 0 0;
+
+      img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s ease;
+      }
+
+      &:hover img {
+        transform: scale(1.05);
+      }
+
+      .play-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: $primary-color;
+        color: $white;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        transition: all 0.3s ease;
+        opacity: 0.95;
+      }
+    }
+
+    .video-title {
+      color: $dark-text;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-top: 1rem;
+      padding: 0 1rem;
+      text-align: center;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $primary-green;
+      }
+    }
+  }
+
+  .home-btn-load-more {
+    background: $primary-color;
+    color: $white;
+    padding: 12px 35px;
+    border-radius: 30px;
+    border: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+    text-decoration: none;
+    font-size: 1rem;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: $hover-darken;
+      transform: scale(1.05);
+      box-shadow: 0 6px 18px $shadow-hover-color;
+      outline: none;
+      border: none;
+    }
+  }
+
+  .video-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  
+    .video-modal-content {
+      background: transparent; // خليها شفافة
+      width: 90%;
+      max-width: 900px;
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+  
+      .close-modal {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 2rem;
+        color: $white;
+        cursor: pointer;
+        z-index: 1001;
+        transition: color 0.3s;
+  
+        &:hover {
+          color: $primary-green;
+        }
+      }
+  
+      .video-wrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; // 16:9 Aspect Ratio
+        height: 0;
+        overflow: hidden;
+  
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 0;
+        }
+      }
+    }
+  }
+  
+  
+}

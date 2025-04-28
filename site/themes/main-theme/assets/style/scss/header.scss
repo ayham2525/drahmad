@@ -1,0 +1,96 @@
+@import "./mixins.scss";
+
+// Colors
+$primary-color: #00A14B;
+$text-color: #333333;
+$text-hover-color: $primary-color;
+$menu-toggler-color: #333; 
+
+header {
+  background-color: $white;
+  color: $text-color;
+
+  nav {
+    .container-fluid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .navbar-brand {
+        img {
+          max-width: 200px !important;
+        }
+      }
+
+      #navbar {
+        flex-grow: 1;
+
+        .navbar-nav {
+          display: flex;
+
+          .nav-link {
+            color: $text-color;
+            font-weight: 500;
+            padding: 10px 15px;
+            transition: color 0.3s ease;
+
+            &:hover,
+            &:focus,
+            &:active {
+              color: $text-hover-color;
+            }
+          }
+        }
+      }
+
+      .navbar-toggler {
+        border: none;
+        background: none;
+        padding: 0;
+        color: $menu-toggler-color;
+
+        &:focus {
+          outline: none;
+          box-shadow: none;
+        }
+
+        .navbar-toggler-icon {
+          background-image: none;
+          width: 24px;
+          height: 24px;
+          position: relative;
+          display: inline-block;
+
+          &::before,
+          &::after,
+          span {
+            content: '';
+            background-color: $menu-toggler-color;
+            display: block;
+            height: 2px;
+            margin: 6px 0;
+            transition: all 0.3s;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Arabic RTL */
+[dir="rtl"] header nav .container-fluid {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] header nav .container-fluid .navbar-nav {
+  justify-content: flex-start;
+}
+
+/* English LTR */
+[dir="ltr"] header nav .container-fluid {
+  flex-direction: row;
+}
+
+[dir="ltr"] header nav .container-fluid .navbar-nav {
+  justify-content: flex-start;
+}

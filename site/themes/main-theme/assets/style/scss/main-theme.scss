@@ -1,0 +1,27 @@
+@import "./mixins.scss";
+@import 'header.scss';
+@import 'sections/banner_slider.scss';
+@import 'sections/image_with_text.scss';
+@import 'sections/show_articles.scss';
+@import 'sections/posts.scss';
+@import 'sections/show-books.scss';
+@import 'sections/latest-videos-section.scss';
+@import 'sections/show_videos.scss';
+@import 'sections/title_with_text.scss';
+@import 'sections/contact_us.scss';
+@import 'videos.scss';
+@import 'footer.scss';
+
+.site-main {
+    width: 100%;
+}
+
+body {
+    font-family: $jost !important;
+
+    [dir="rtl"] & {
+        font-family: $tajawal !important;
+    }
+}
+
+ 

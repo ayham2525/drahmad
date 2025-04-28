@@ -1,0 +1,192 @@
+@import "./mixins.scss";
+
+ 
+// ========================
+// Video Series Section
+// ========================
+
+$primary-color: #00A14B;
+$overlay-bg: rgba(0, 0, 0, 0.8);
+$background-color: #f9f9f9;
+$border-color: #ddd;
+$text-color: #333;
+$white-color: #fff;
+
+
+.video-series-section {
+  background: $background-color;
+
+  .section-title {
+    font-size: 2rem;
+    color: $primary-color;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .view-more {
+    font-size: 1rem;
+    color: $primary-color;
+    border: 1px solid $primary-color;
+    border-radius: 25px;
+    padding: 6px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+
+    &:hover {
+      background: $primary-color;
+      color: $white-color;
+    }
+  }
+
+  .video-card {
+    cursor: pointer;
+
+    .youtube-thumb {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+
+      img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .play-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: $primary-color;
+        color: $white-color;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        opacity: 0.8;
+        transition: background 0.3s;
+
+        &:hover {
+          background: $hover-darken;
+        }
+      }
+    }
+
+    .video-title {
+      color: $text-color;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-top: 10px;
+      text-align: center;
+    }
+  }
+
+  .video-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: $overlay-bg;
+    justify-content: center;
+    align-items: center;
+
+    .video-modal-content {
+      position: relative;
+      width: 90%;
+      max-width: 800px;
+      background: #000;
+      border-radius: 10px;
+      overflow: hidden;
+
+      .close-modal {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 2rem;
+        color: $white-color;
+        cursor: pointer;
+        z-index: 1001;
+      }
+
+      .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .btn-load-more {
+    background: $primary-color;
+    color: $white-color;
+    padding: 10px 30px;
+    border-radius: 25px;
+    border: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.3s;
+    outline: none !important;
+    box-shadow: none !important;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: $hover-darken;
+      outline: none !important;
+      box-shadow: none !important;
+    }
+  }
+
+  .video-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+
+    .search-field {
+      width: 280px;
+      padding: 10px 15px;
+      border: 1px solid $border-color;
+      font-size: 1rem;
+      outline: none;
+
+      html[dir="rtl"] & {
+        border-radius: 25px;
+        text-align: right;
+        border-right: none;
+      }
+
+      html[dir="ltr"] & {
+        border-radius: 25px;
+        text-align: left;
+        border-left: none;
+      }
+    }
+  }
+
+  .btn-search {
+    background-color: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
